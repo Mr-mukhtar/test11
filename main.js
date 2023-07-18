@@ -10,10 +10,13 @@ const email = document.getElementById('email').value;
         name: name,
         email: email,
       };
-    
+
+      var userDetails_serialized = JSON.stringify(userDetails)
+     
       // Store the user details in local storage with a key "userDetails"
-      localStorage.setItem("userDetails", JSON.stringify(userDetails));
-    
+      localStorage.setItem("userDetails", userDetails_serialized);
+      var userDetails_deserialized = JSON.parse(localStorage.getItem("userDetails"))
+    console.log(userDetails_deserialized);
     
 })
  
